@@ -62,10 +62,6 @@ const AuthForm = () => {
         console.log(res.data);
         toast.success(res.data.message);
         setUser(res.data.customer);
-        localStorage.setItem("token", res.data.token);
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${res.data.token}`;
         router.back();
       })
       .catch((err) => {
