@@ -85,9 +85,9 @@ export const ProfileOptions: React.FC<ProfileOptionsProps> = ({
           </div>
         </div>
       ) : (
-        <Button className="w-full">
-          <Link href="/sign-in">Sign-In</Link>
-        </Button>
+        <Link href="/sign-in">
+          <Button className="w-full">Sign-In</Button>
+        </Link>
       )}
     </>
   );

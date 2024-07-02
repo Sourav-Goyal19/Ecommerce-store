@@ -10,7 +10,7 @@ body,
 }
 
 @layer utilities {
-  .custom-scroll::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 6px;
   }
 
@@ -18,28 +18,28 @@ body,
     border-color: var(--input);
   }
 
-  .custom-scroll::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     cursor: default;
     border-radius: 50px;
     border: 1px solid #ccc;
     background-color: #000;
   }
 
-  .custom-scroll::-webkit-scrollbar-thumb:hover {
+  *::-webkit-scrollbar-thumb:hover {
     border: 1px solid gray;
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     height: 3px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     border-radius: 50px;
     border: 1px solid #ccc;
     background-color: #000;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  *::-webkit-scrollbar-thumb:hover {
     border: 1px solid gray;
   }
 
