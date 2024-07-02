@@ -89,7 +89,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
                           </div>
                         </div>
                         <div className="flex flex-col gap-3">
-                          <CartButton onClose={onClose} />
+                          {user && <CartButton onClose={onClose} />}
                           <ProfileOptions user={user} onClose={onClose} />
                         </div>
                       </div>
