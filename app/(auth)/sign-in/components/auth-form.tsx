@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import FetchUser from "@/components/fetch-user";
 import { useCart } from "@/zustand/cart";
+import { useCheckoutStore } from "@/zustand/checkoutStore";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_URL;
 axios.defaults.withCredentials = true;
@@ -21,6 +22,9 @@ const AuthForm = () => {
   const { user, setUser } = useUser();
   const { setCart } = useCart();
   const router = useRouter();
+  const setCustomerDetails = useCheckoutStore(
+    (state) => state.setCustomerDetails
+  );
 
   useEffect(() => {
     if (user) {
@@ -65,6 +69,9 @@ const AuthForm = () => {
         toast.success(res.data.message);
         setUser(res.data.customer);
         setCart(res.data.cart);
+        setCustomerDetails(
+          res.data.customer.address[res.data.customer.address.length - 1]
+        );
         router.back();
       })
       .catch((err: any) => {
