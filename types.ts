@@ -22,7 +22,7 @@ export interface Category {
   categories: CategoryData[];
 }
 
-export interface IndiviualCategory {
+export interface IndividualCategory {
   message: string;
   category: CategoryData;
 }

@@ -28,14 +28,7 @@ const FetchUser = () => {
           setCustomerDetails(
             res.data.customer.address[res.data.customer.address.length - 1]
           );
-          axios
-            .get(`/cart/${res.data.customer._id}`)
-            .then((res) => {
-              setCart(res.data.cart);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+          setCart(res.data.cart);
         }
       } catch (error) {
         console.log(error);

@@ -11,6 +11,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import FetchUser from "@/components/fetch-user";
+import { useCart } from "@/zustand/cart";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_URL;
 axios.defaults.withCredentials = true;
@@ -18,6 +19,7 @@ axios.defaults.withCredentials = true;
 const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { user, setUser } = useUser();
+  const { setCart } = useCart();
   const router = useRouter();
 
   useEffect(() => {
@@ -62,11 +64,12 @@ const AuthForm = () => {
         console.log(res.data);
         toast.success(res.data.message);
         setUser(res.data.customer);
+        setCart(res.data.cart);
         router.back();
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log(err);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message || "Something went wrong");
       })
       .finally(() => {
         setIsLoading(false);
