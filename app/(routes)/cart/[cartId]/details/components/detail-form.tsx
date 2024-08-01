@@ -29,7 +29,7 @@ const DetailFormPage = () => {
       .trim()
       .min(1, "Phone number is required")
       .regex(/^\d+$/, "Mobile number must contain only digits")
-      .length(10, "Phone number must be exactly 10 digits"),
+      .length(10, "Phone number must be exactly of 10 digits"),
     street: z
       .string()
       .trim()
@@ -41,7 +41,7 @@ const DetailFormPage = () => {
       .trim()
       .min(1, "Pincode is required")
       .regex(/^\d+$/, "Pincode must contain only digits")
-      .length(6, "Pincode must be exactly be exactly 6 digits"),
+      .length(6, "Pincode must be exactly of 6 digits"),
     nearby: z.string().trim().optional(),
   });
 
