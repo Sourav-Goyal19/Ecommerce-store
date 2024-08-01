@@ -1,7 +1,5 @@
 import { ProductData } from "@/types";
 import NoResults from "./ui/noresults";
-import Image from "next/image";
-import { IndianRupee } from "lucide-react";
 import ProductCard from "@/components/ui/product-card";
 
 interface ProductListProps {
