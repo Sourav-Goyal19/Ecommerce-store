@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const HomePage = async () => {
   const fetchedBillboards = await getBillboard("667199fa60871c8308f757f5");
   const fetchedProducts = await getProducts({ isFeatured: true });
-  console.log(fetchedProducts);
+  // console.log(fetchedProducts);
   return (
     <Container>
       <div className="space-y-10 pb-10">

@@ -1,12 +1,15 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import Button from "./ui/button";
-import CustomButton from "@/components/button";
-import { ShoppingBag } from "lucide-react";
-import { useUser } from "@/zustand/user";
 import Link from "next/link";
+
+import Button from "./ui/button";
+
+import { useUser } from "@/zustand/user";
 import { useCart } from "@/zustand/cart";
+import { ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
+import CustomButton from "@/components/button";
 
 const NavbarActions = () => {
   const [isMounted, setlsMounted] = useState(false);

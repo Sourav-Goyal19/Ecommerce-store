@@ -14,7 +14,7 @@ const CartDataInitializer: React.FC<CartDataInitializerProps> = ({
   const setCartData = useCheckoutStore((state) => state.setCartData);
 
   useEffect(() => {
-    console.log(cartData);
+    // console.log(cartData);
     setCartData(cartData);
   }, [cartData, setCartData]);
 

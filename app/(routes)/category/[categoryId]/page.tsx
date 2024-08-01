@@ -101,7 +101,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
   const formattedColors = Array.from(colorMap.values());
 
   //console.log(fetchedCategory);
-  console.log(fetchedProducts);
+  // console.log(fetchedProducts);
 
   return (
     <div className="bg-white">

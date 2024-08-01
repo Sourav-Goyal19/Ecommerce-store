@@ -15,8 +15,8 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
   const router = useRouter();
 
   const selectedValue = searchParams.get(valueKey);
-  console.log(data);
-  console.log(selectedValue);
+  // console.log(data);
+  // console.log(selectedValue);
 
   const onClick = (id: string) => {
     const current = qs.parse(searchParams.toString());

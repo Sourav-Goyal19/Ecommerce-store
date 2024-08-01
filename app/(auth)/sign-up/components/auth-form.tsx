@@ -21,7 +21,7 @@ const AuthForm = () => {
 
   useEffect(() => {
     if (user) {
-      console.log(user);
+      // console.log(user);
       router.push("/");
     }
   }, [user, router]);
@@ -64,7 +64,7 @@ const AuthForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     setIsLoading(true);
-    console.log(data);
+    // console.log(data);
     axios
       .post(`/customers/register`, data, {
         headers: {
@@ -72,7 +72,7 @@ const AuthForm = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         toast.success(res.data.message);
         setUser(res.data.customer);
         router.push("/sign-in");

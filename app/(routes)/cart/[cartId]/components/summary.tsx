@@ -17,7 +17,7 @@ const Summary = ({ text }: { text?: string }) => {
 
   useEffect(() => {
     if (!cart?._id) return;
-    console.log(cart.products);
+    // console.log(cart.products);
     let price = (cart?.products as CartProduct[])
       .map((item) => (item.productId as ProductData).price * item.quantity)
       .reduce((acc, curr) => acc + curr, 0);
@@ -27,7 +27,9 @@ const Summary = ({ text }: { text?: string }) => {
   const removeAll = () => {
     axios
       .patch(`/cart/${user?._id}/removeall`)
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        // console.log(res.data)
+      })
       .catch((err) => console.log(err));
   };
 
@@ -41,6 +43,7 @@ const Summary = ({ text }: { text?: string }) => {
         </div>
       </div>
       <Button
+        disabled={cart && cart.products.length == 0}
         onClick={() => router.push(`${params.cartId}/details`)}
         className="w-full mt-6"
       >

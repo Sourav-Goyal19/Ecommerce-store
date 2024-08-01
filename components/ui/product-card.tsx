@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
     if (!user?._id) return router.push("/sign-in");
     if (!mongoose.Types.ObjectId.isValid(data._id)) return;
 
-    console.log(data.productImages[0] as ProductImageData);
+    // console.log(data.productImages[0] as ProductImageData);
 
     axios
       .post(`/cart/${user._id}/add`, {
@@ -50,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         quantity: 1,
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setCart(res.data.cart);
         toast.success("Item added to cart");
       })

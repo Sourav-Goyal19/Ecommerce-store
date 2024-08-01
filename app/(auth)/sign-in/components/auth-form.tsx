@@ -28,7 +28,7 @@ const AuthForm = () => {
 
   useEffect(() => {
     if (user) {
-      console.log(user);
+      // console.log(user);
       router.push("/");
     }
   }, [user, router]);
@@ -61,17 +61,25 @@ const AuthForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     setIsLoading(true);
-    console.log(data);
+    // console.log(data);
     axios
       .post(`/customers/login`, data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         toast.success(res.data.message);
         setUser(res.data.customer);
         setCart(res.data.cart);
         setCustomerDetails(
           res.data.customer.address[res.data.customer.address.length - 1]
         );
+        axios
+          .post(`${window.location.origin}/api/settoken`, {
+            token: res.data.token,
+          })
+          .then((res) => {
+            // console.log(res.data);
+          })
+          .catch((err) => console.log(err));
         router.back();
       })
       .catch((err: any) => {

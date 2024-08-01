@@ -51,7 +51,7 @@ const Info: React.FC<InfoProps> = ({
         )._id,
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         toast.success("Item added to cart");
         setCart(res.data.cart);
       })
