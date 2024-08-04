@@ -67,12 +67,22 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
       className="bg-white rounded-xl group shadow-md overflow-hidden cursor-pointer border p-3 space-y-4"
     >
       <div className="aspect-square bg-gray-100 rounded-xl relative">
-        <Image
-          src={(data.productImages[0] as ProductImageData).imageUrls[0]}
-          alt={data.name}
-          fill
-          className="aspect-square object-cover rounded-md"
-        />
+        <div className="group">
+          <Image
+            src={(data.productImages[0] as ProductImageData).imageUrls[0]}
+            alt={data.name}
+            fill
+            className="aspect-square object-cover rounded-md group-hover:hidden"
+          />
+          {(data.productImages[0] as ProductImageData).imageUrls[1] && (
+            <Image
+              src={(data.productImages[0] as ProductImageData).imageUrls[1]}
+              alt={data.name}
+              fill
+              className="aspect-square hidden object-cover rounded-md group-hover:block"
+            />
+          )}
+        </div>
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
           <div className="flex gap-x-6 justify-center">
             <IconButton
